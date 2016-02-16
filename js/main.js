@@ -14,25 +14,32 @@ var tasks = [
   }
 ];
 
-// Używamy `querySelector` aby znaleźć element w DOM
+//3/ Wydzialamy renderowanie do osobnej funkcji...
 var $app = document.querySelector('#todos');
+// ... dzięki wynoszeniu (`hosting`) możemy z niej skorzystać pomimo, że nie została jeszcze zadeklarowana
+renderTasks($app, tasks);
 
-//18/ Przeiterujemy po modelu aby stworzyć widok
-for (var k in tasks) {
-  var task = tasks[k];
+//7/ Renderujemy wszystkie...
+function renderTasks($app, tasks) {
+  var k, $task;
+  for (k in tasks) {
+    $task = renderTask(tasks[k]);
+    $app.appendChild($task);
+  }
+}
 
-  //3/ Tworzymy nowe elementy...
+//14/ ... a tutaj tworzymy obiekt DOM dla pojedynczego zadania
+function renderTask(task) {
   var $task = document.createElement('div');
   var $taskName = document.createElement('span');
   var $taskTime = document.createElement('span');
 
-  //2/ ... wpisujemy zawartość (textContent!)...
   $taskName.textContent = task.name;
   $taskTime.textContent = (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min';
 
-  //4/ ... i dodajemy do DOM
   $task.appendChild($taskName);
   $task.appendChild(document.createTextNode(' '));
   $task.appendChild($taskTime);
-  $app.appendChild($task);
+
+  return $task;
 }
