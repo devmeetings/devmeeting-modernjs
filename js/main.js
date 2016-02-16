@@ -1,17 +1,12 @@
-// Używamy trybu `strict`
 "use strict";
 
 var now = new Date().getTime();
 
-//14/ Przygotowujemy model zadań do wykonania
 var tasks = [
   {
-    // zapisujemy nazwę zadania...
     name: 'ModernJS training',
-    // oraz czas, w którym zostało rozpoczęte
     started: now - 1000 * 60 * 10
   },
-  //5/ a dla skończonych zadań trzymamy też timestamp ukończenia
   {
     name: 'Learning JavaScript',
     started: now - 1000 * 3600 * 24,
@@ -19,5 +14,25 @@ var tasks = [
   }
 ];
 
-// Kolejnym krokiem będzie wyświetlenie zadań.
-console.log('Tasks', tasks);
+// Używamy `querySelector` aby znaleźć element w DOM
+var $app = document.querySelector('#todos');
+
+//18/ Przeiterujemy po modelu aby stworzyć widok
+for (var k in tasks) {
+  var task = tasks[k];
+
+  //3/ Tworzymy nowe elementy...
+  var $task = document.createElement('div');
+  var $taskName = document.createElement('span');
+  var $taskTime = document.createElement('span');
+
+  //2/ ... wpisujemy zawartość (textContent!)...
+  $taskName.textContent = task.name;
+  $taskTime.textContent = (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min';
+
+  //4/ ... i dodajemy do DOM
+  $task.appendChild($taskName);
+  $task.appendChild(document.createTextNode(' '));
+  $task.appendChild($taskTime);
+  $app.appendChild($task);
+}
