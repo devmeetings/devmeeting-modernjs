@@ -1,7 +1,14 @@
 <details>
-  Rozpoczynamy od napisania SPA w czystym JS. Korzystamy z HTML5 i na początek ładujemy
-  nasze skrypty korzystając z tagów <code>script</code> w <code>HEAD</code>.
+  W aplikacji chcemy wyświetlać zadania, nad którym aktualnie pracujemy. Będziemy też zliczać czas poświęcony na dane zadanie.
 </details>
-<aside file="index.html" order="2">
-  Możemy wrzucać też skrypty pod koniec tagu <code>body</code> lub (o ile się da) skorzystać z atrybutu <code>async</code>
+<aside file="js/main.js" order="0">
+  <p>Tryb <code>strict</code> zmienia sposób w jaki przeglądarka interpretuje nasz kod. Między innymi:</p>
+
+  <ul>
+    <li>Odwołanie do nieistniejącej zmiennej to <code>ReferenceError</code>
+    <li>Zakaz używania <code>with</code>
+    <li><code>eval</code> nie wycieka zmiennych
+    <li>Zmiana domyślnego kontekstu wywołania funkcji <code>fn.apply(null)</code>
+  </ul>
+  <p>Więcej <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Stric mode @ MDN</a></p>
 </aside>
