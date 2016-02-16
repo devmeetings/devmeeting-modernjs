@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>System.js + JSPM</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column" style="width: 65%">
+            <xp-editor active="index.html" tree>
+              	<script id="index.html" highlight="5-19" type="application/octetstream" src="012/index.html"></script>
+	<script id="js/config.js" highlight="1-55" type="application/octetstream" src="012/js/config.js"></script>
+	<script id="js/main.js" highlight="1-13" type="application/octetstream" src="012/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="1-4" type="application/octetstream" src="012/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="1-7,16-21,23-28" type="application/octetstream" src="012/js/views/TasksView.js"></script>
+	<script id="jspm_packages/npm/lodash@4.5.0.js" type="application/octetstream" src="012/jspm_packages/npm/lodash@4.5.0.js"></script>
+	<script id="jspm_packages/npm/lodash@4.5.0/lodash.js" type="application/octetstream" src="012/jspm_packages/npm/lodash@4.5.0/lodash.js"></script>
+	<script id="jspm_packages/system.js" type="application/octetstream" src="012/jspm_packages/system.js"></script>
+	<script id="jspm_packages/system.js.map" type="application/octetstream" src="012/jspm_packages/system.js.map"></script>
+	<script id="package.json" highlight="2-15,21-34" type="application/octetstream" src="012/package.json"></script>
+	<script id="css/styles.css" type="application/octetstream" src="005/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column" style="width: 35%">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Ładowanie przez System.js i zarządzanie przez JSPM</h1></header>
+            <details>
+  <p>
+    Następcą <code>require.js</code> wydaje się być <code>System.js</code> - loader, który potrafi obsługiwać dowolny rodzaj modułów i przetwarzać ich zawartość w locie.
+  </p>
+  <p>
+    <code>System.js</code> najczęsciej występuje razem z uniwersalnym menadżerem pakietów <code>JSPM</code>.
+    <code>JSPM</code> potrafi ściągać zależności z wielu źródeł (Github, NPM) i automatycznie uaktualnia konfigurację <code>System.js</code>.
+  </p>
+  <p>
+    Zainstalowanie i załadowanie <code>lodash</code> w projekcie ogranicza się do uruchomienia:
+  </p>
+  <pre>$ jspm install lodash</pre>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

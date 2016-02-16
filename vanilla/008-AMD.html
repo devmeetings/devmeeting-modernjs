@@ -1,0 +1,39 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>AMD</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column" style="width: 65%">
+            <xp-editor active="index.html" tree>
+              	<script id="index.html" highlight="5-12" type="application/octetstream" src="008/index.html"></script>
+	<script id="js/main.js" highlight="1-9,11-14" type="application/octetstream" src="008/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="1-5,15-25" type="application/octetstream" src="008/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="1-8,36-40" type="application/octetstream" src="008/js/views/TasksView.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="005/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column" style="width: 35%">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Require.js + AMD</h1></header>
+            <details>
+  <p>O wiele lepszym rozwiązaniem jest użycie biblioteki do ładowania modułów (np. <code>require.js</code>)</p>
+  <p>Kod zorganizujemy w ustandaryzowane moduły <code>AMD</code> - Asynchronous Module Definition</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

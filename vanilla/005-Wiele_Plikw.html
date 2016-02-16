@@ -1,0 +1,38 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Wiele Plików</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="css/styles.css" >
+              	<script id="css/styles.css" highlight="2-12" type="application/octetstream" src="005/css/styles.css"></script>
+	<script id="index.html" highlight="5-13" type="application/octetstream" src="005/index.html"></script>
+	<script id="js/Tasks.js" highlight="1-19" type="application/octetstream" src="005/js/Tasks.js"></script>
+	<script id="js/TasksView.js" highlight="1-27" type="application/octetstream" src="005/js/TasksView.js"></script>
+	<script id="js/main.js" highlight="1-6" type="application/octetstream" src="005/js/main.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Podział kodu na wiele plików</h1></header>
+            <details>
+  <p>Podzielimy nasz kod na 3 pliki: <code>Tasks.js</code>, <code>TasksView.js</code> i <code>main.js</code></p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

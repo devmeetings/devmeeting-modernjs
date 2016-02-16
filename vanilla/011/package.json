@@ -1,0 +1,27 @@
+{
+  "name": "tasks",
+  "version": "1.0.0",
+  "description": "",
+  // Jeżeli ładujemy cały moduł to który plik należy wczytać (entry-point)
+  "main": "js/main.js",
+  //3/ Definicja zależności naszego projektu. Dodajemy nowe przez `npm install <dep> --save`
+  "dependencies": {
+    "lodash": "^4.5.0"
+  },
+  // Zależności, które używane są tylko w developmencie (narzędzia)
+  "devDependencies": {},
+  //3/ Przydatne skrypty uruchamiane przez `npm run test`
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmeetings/devmeeting-modernjs.git"
+  },
+  "author": "Devmeetings",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
+  },
+  "homepage": "http://xpla.org/slides/modernjs"
+}

@@ -1,0 +1,39 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Namespacing</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column" style="width: 65%">
+            <xp-editor active="index.html" tree>
+              	<script id="index.html" highlight="5-13" type="application/octetstream" src="007/index.html"></script>
+	<script id="js/main.js" highlight="1-15" type="application/octetstream" src="007/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="1-27" type="application/octetstream" src="007/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="1-41" type="application/octetstream" src="007/js/views/TasksView.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="005/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column" style="width: 35%">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Module Pattern + Namespacing</h1></header>
+            <details>
+  <p>Problem pojawia się kiedy modułów robi się coraz więcej.</p>
+  <p>Konflikty globalnych nazw zmiennych są trudne do uniknięcia, więc staramy się dostosować hierarchię modułów w aplikacji do struktury katalogów</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

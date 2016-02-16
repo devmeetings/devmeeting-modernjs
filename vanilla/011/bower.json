@@ -1,0 +1,25 @@
+{
+  "name": "tasks",
+  "homepage": "https://github.com/devmeetings/devmeeting-modernjs",
+  "authors": [
+    "Devmeetings"
+  ],
+  "description": "",
+  // Główny plik do załadowania
+  "main": "js/main.js",
+  "moduleType": [],
+  "license": "-",
+  "private": true,
+  //7/ Te rzeczy nie będą ściągane gdy ktoś skorzysta z `bower install`
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  //3/ Zależności w projekcie
+  "dependencies": {
+    "lodash": "^4.5.0"
+  }
+}

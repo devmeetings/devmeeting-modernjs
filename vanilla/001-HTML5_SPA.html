@@ -1,0 +1,40 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>HTML5 SPA</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="css/styles.css" >
+              	<script id="css/styles.css" highlight="1-4" type="application/octetstream" src="001/css/styles.css"></script>
+	<script id="index.html" highlight="1-17" type="application/octetstream" src="001/index.html"></script>
+	<script id="js/main.js" highlight="1-2" type="application/octetstream" src="001/js/main.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Pierwsze SPA w HTML5</h1></header>
+            <details>
+  Rozpoczynamy od napisania SPA w czystym JS. Korzystamy z HTML5 i na początek ładujemy
+  nasze skrypty korzystając z tagów <code>script</code> w <code>HEAD</code>.
+</details>
+<aside file="index.html" order="2">
+  Możemy wrzucać też skrypty pod koniec tagu <code>body</code> lub (o ile się da) skorzystać z atrybutu <code>async</code>
+</aside>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

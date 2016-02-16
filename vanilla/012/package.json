@@ -1,0 +1,34 @@
+{
+  "name": "tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jspm": "^0.16.29"
+  },
+  "scripts": {
+    "jspm": "jspm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmeetings/devmeeting-modernjs.git"
+  },
+  "author": "Devmeetings",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
+  },
+  "homepage": "http://xpla.org/slides/modernjs",
+  //7/ JSPM wpina swoją konfigurację w plik `package.json`
+  "jspm": {
+    /// Podajemy ścieżkę do pliku z configiem, bo JSPM sam tym plikiem zarządza
+    "configFile": "js/config.js",
+    "dependencies": {
+      "lodash": "npm:lodash@^4.5.0"
+    },
+    "devDependencies": {}
+  }
+}

@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>UMD</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="index.html" >
+              	<script id="index.html" highlight="5-10" type="application/octetstream" src="009/index.html"></script>
+	<script id="js/main.js" highlight="1-10" type="application/octetstream" src="009/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="1-3,14-19" type="application/octetstream" src="009/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="1-18,46-51" type="application/octetstream" src="009/js/views/TasksView.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="005/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Universal Module Definition</h1></header>
+            <details>
+  <p>Istnieją inne formaty modułów:</p>
+  <ul>
+    <li>AMD - stworzony dla przeglądarek (które tylko asynchronicznie potrafią załadować pliki)
+    <li>CommonJS - używany w nodejs
+    <li>UMD - pozwalający pisać moduły działające w obu ekosystemach (izomorficzny kod)
+  </ul>
+  <p>Najczęściej kod pisany jest konsekwentnie w jednym z formatów, a podczas kroku budowania wypuszczane są paczki np. w formacie UMD.<p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
