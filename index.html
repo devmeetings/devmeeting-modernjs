@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width">
     <title>First App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script async src="/cdn/require.js/2.1.18/require.js" data-main="js/config"></script>
   </head>
   <body>
     <h1>My current tasks</h1>
     <div id="todos"></div>
+    <!-- 5/ Ładujemy system.js, config i główny moduł -->
+    <script src="jspm_packages/system.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+      System.import('js/main');
+    </script>
   </body>
 </html>

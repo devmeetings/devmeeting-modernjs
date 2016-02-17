@@ -1,9 +1,7 @@
-// W module widoku deklarujemy zależność od globalnej biblioteki.
 define(['lodash'], function (_) {
 
-  //3/ Przepisujemy metodę render na templatkę lodashową...
   var tpl = _.template(
-    '<div class="task"><span><%= name %></span><span><%= time %></span></div>'
+    '<div class="task"><span><%= name %></span> <span><%= time %></span></div>'
   );
 
   return TasksView;
@@ -18,7 +16,6 @@ define(['lodash'], function (_) {
 
       var k, $task, tasks, $tasks;
       tasks = Model.getTasks()
-      //5/ 5. Grupujemy wszystkie zmiany w DOM
       $tasks = [];
       for (k in tasks) {
         $tasks.push(renderTask(tasks[k], now));
@@ -26,7 +23,6 @@ define(['lodash'], function (_) {
       $app.innerHTML = $tasks.join('\n');
     }
 
-    // ... i używamy jej w metodzie render
     function renderTask(task, now) {
 
       var data = {

@@ -1,3 +1,4 @@
+// Ale AMD jest również obsługiwany.
 define([], function () {
   "use strict";
 

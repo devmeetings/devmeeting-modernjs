@@ -2,16 +2,14 @@
   "name": "tasks",
   "version": "1.0.0",
   "description": "",
-  // Jeżeli ładujemy cały moduł to który plik należy wczytać (entry-point)
   "main": "js/main.js",
-  //3/ Definicja zależności naszego projektu. Dodajemy nowe przez `npm install <dep> --save`
   "dependencies": {
-    "lodash": "^4.5.0"
   },
-  // Zależności, które używane są tylko w developmencie (narzędzia)
-  "devDependencies": {},
-  //3/ Przydatne skrypty uruchamiane przez `npm run test`
+  "devDependencies": {
+    "jspm": "^0.16.29"
+  },
   "scripts": {
+    "jspm": "jspm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
   },
-  "homepage": "http://xpla.org/slides/modernjs"
+  "homepage": "http://xpla.org/slides/modernjs",
+  //7/ JSPM wpina swoją konfigurację w plik `package.json`
+  "jspm": {
+    /// Podajemy ścieżkę do pliku z configiem, bo JSPM sam tym plikiem zarządza
+    "configFile": "js/config.js",
+    "dependencies": {
+      "lodash": "npm:lodash@^4.5.0"
+    },
+    "devDependencies": {}
+  }
 }
