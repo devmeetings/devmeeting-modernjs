@@ -1,10 +1,15 @@
-"use strict";
+(function (app){
+  "use strict";
 
-// Korzystamy z modelu
-var model = TasksModel;
-// Tworzymy nowy widok
-var view = TasksView(document.querySelector('#todos'), model);
-//3/ I renderujemy całość co 500ms
-setInterval(function () {
-  view.render(new Date().getTime());
-}, 500);
+  //5/ Korzystamy z pełnych ścieżek do modułów
+  var model = app.models.TasksModel;
+  var view = app.views.TasksView(
+    document.querySelector('#todos'),
+    model
+  );
+
+  setInterval(function () {
+    view.render(new Date().getTime());
+  }, 500);
+
+}((this || window).app));

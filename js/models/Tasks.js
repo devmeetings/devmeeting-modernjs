@@ -1,10 +1,6 @@
-"use strict";
-
-//26/ Możemy wykorzystać `Module Pattern` 
 (function (exports) {
   "use strict";
 
-  //2/ Te zmienne są teraz prywatne dla tego modułu...
   var now = new Date().getTime();
   var tasks = [
     {
@@ -18,13 +14,14 @@
     }
   ];
 
-  //5 ...a na zewnątrz eksportujemy tylko API
-  exports.TasksModel = {
+  //3/ Uniezależniamy się od kolejności ładowania skryptów
+  exports.app = exports.app || {};
+  exports.app.models = exports.app.models || {};
+  exports.app.models.TasksModel = {
     getTasks: function () {
       return tasks;
     }
   };
 
-  // Nasz kod może się wykonać nawet gdy zostanie wykonany w innym kontekście.
 }(this || window));
 
