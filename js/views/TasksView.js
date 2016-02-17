@@ -1,18 +1,12 @@
-//14/ Universal Module Definition (UMD)
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['exports'], factory);
-  } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-    // CommonJS
-    factory(exports/*,require('b')*/);
-  } else {
-    // Browser globals
-    factory((root.commonJsStrict = {}), root.b);
-  }
-}(this, function (exports, b) {
+// W module widoku deklarujemy zależność od globalnej biblioteki.
+define(['lodash'], function (_) {
 
-  exports.TasksView = TasksView;
+  //3/ Przepisujemy metodę render na templatkę lodashową...
+  var tpl = _.template(
+    '<div class="task"><span><%= name %></span><span><%= time %></span></div>'
+  );
+
+  return TasksView;
 
   function TasksView($app, Model) {
     return {
@@ -22,30 +16,27 @@
     function renderTasks(now) {
       $app.innerHTML = '';
 
-      var k, $task, tasks;
+      var k, $task, tasks, $tasks;
       tasks = Model.getTasks()
+      //5/ 5. Grupujemy wszystkie zmiany w DOM
+      $tasks = [];
       for (k in tasks) {
-        $task = renderTask(tasks[k], now);
-        $app.appendChild($task);
+        $tasks.push(renderTask(tasks[k], now));
       }
+      $app.innerHTML = $tasks.join('\n');
     }
 
+    // ... i używamy jej w metodzie render
     function renderTask(task, now) {
-      var $task = document.createElement('div');
-      var $taskName = document.createElement('span');
-      var $taskTime = document.createElement('span');
 
-      $taskName.textContent = task.name;
-      $taskTime.textContent = (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min';
-      $task.className = 'task';
+      var data = {
+        name: task.name,
+        time: (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min',
+      };
 
-      $task.appendChild($taskName);
-      $task.appendChild(document.createTextNode(' '));
-      $task.appendChild($taskTime);
-
-      return $task;
+      return tpl(data);
     }
   }
 
-}));
+});
 
