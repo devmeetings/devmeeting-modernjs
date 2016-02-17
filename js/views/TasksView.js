@@ -1,8 +1,18 @@
-//4/ Dla modułów bez zależności możemy pominąc pustą tablicę
-define(function () {
-  "use strict";
+//14/ Universal Module Definition (UMD)
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['exports'], factory);
+  } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+    // CommonJS
+    factory(exports/*,require('b')*/);
+  } else {
+    // Browser globals
+    factory((root.commonJsStrict = {}), root.b);
+  }
+}(this, function (exports, b) {
 
-  return TasksView;
+  exports.TasksView = TasksView;
 
   function TasksView($app, Model) {
     return {
@@ -36,5 +46,6 @@ define(function () {
       return $task;
     }
   }
-});
+
+}));
 

@@ -1,4 +1,3 @@
-// Definiujemy nowy moduł, bez żadnych zależności
 define([], function () {
   "use strict";
 
@@ -15,7 +14,6 @@ define([], function () {
     }
   ];
 
-  //3/ Zwracamy publiczne API tego modułu
   return {
     getTasks: function () {
       return tasks;

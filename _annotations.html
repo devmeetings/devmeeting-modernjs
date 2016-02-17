@@ -1,4 +1,9 @@
 <details>
-  <p>O wiele lepszym rozwiązaniem jest użycie biblioteki do ładowania modułów (np. <code>require.js</code>)</p>
-  <p>Kod zorganizujemy w ustandaryzowane moduły <code>AMD</code> - Asynchronous Module Definition</p>
+  <p>Istnieją inne formaty modułów:</p>
+  <ul>
+    <li>AMD - stworzony dla przeglądarek (które tylko asynchronicznie potrafią załadować pliki)
+    <li>CommonJS - używany w nodejs
+    <li>UMD - pozwalający pisać moduły działające w obu ekosystemach (izomorficzny kod)
+  </ul>
+  <p>Najczęściej kod pisany jest konsekwentnie w jednym z formatów, a podczas kroku budowania wypuszczane są paczki np. w formacie UMD.<p>
 </details>
