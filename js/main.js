@@ -1,9 +1,9 @@
-(function (app){
+// W `require.js` mówimy, które moduły należy zaimportować
+require(['./models/Tasks', './views/TasksView'], function (TasksModel, TasksView) {
   "use strict";
 
-  //5/ Korzystamy z pełnych ścieżek do modułów
-  var model = app.models.TasksModel;
-  var view = app.views.TasksView(
+  var model = TasksModel;
+  var view = TasksView(
     document.querySelector('#todos'),
     model
   );
@@ -11,5 +11,4 @@
   setInterval(function () {
     view.render(new Date().getTime());
   }, 500);
-
-}((this || window).app));
+});

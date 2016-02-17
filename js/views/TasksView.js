@@ -1,10 +1,8 @@
-(function (exports) {
+//4/ Dla modułów bez zależności możemy pominąc pustą tablicę
+define(function () {
   "use strict";
 
-  //3/ Podobnie robimy z `TasksView`
-  exports.app = exports.app || {};
-  exports.app.views = exports.app.views || {};
-  exports.app.views.TasksView = TasksView;
+  return TasksView;
 
   function TasksView($app, Model) {
     return {
@@ -38,4 +36,5 @@
       return $task;
     }
   }
-}(this || window));
+});
+

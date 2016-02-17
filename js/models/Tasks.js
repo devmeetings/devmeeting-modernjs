@@ -1,4 +1,5 @@
-(function (exports) {
+// Definiujemy nowy moduł, bez żadnych zależności
+define([], function () {
   "use strict";
 
   var now = new Date().getTime();
@@ -14,14 +15,11 @@
     }
   ];
 
-  //3/ Uniezależniamy się od kolejności ładowania skryptów
-  exports.app = exports.app || {};
-  exports.app.models = exports.app.models || {};
-  exports.app.models.TasksModel = {
+  //3/ Zwracamy publiczne API tego modułu
+  return {
     getTasks: function () {
       return tasks;
     }
   };
-
-}(this || window));
+});
 
