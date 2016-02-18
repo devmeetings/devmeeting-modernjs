@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Komponent Task</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="css/styles.css" >
+              	<script id="css/styles.css" highlight="2-4" type="application/octetstream" src="016/css/styles.css"></script>
+	<script id="index.html" highlight="5-18" type="application/octetstream" src="016/index.html"></script>
+	<script id="src/components/.Task.js.swp" type="application/octetstream" src="016/src/components/.Task.js.swp"></script>
+	<script id="src/components/Task/Task.css" highlight="1-13" type="application/octetstream" src="016/src/components/Task/Task.css"></script>
+	<script id="src/components/Task/Task.js" highlight="1-24" type="application/octetstream" src="016/src/components/Task/Task.js"></script>
+	<script id="src/components/Tasks.js" highlight="1-24" type="application/octetstream" src="016/src/components/Tasks.js"></script>
+	<script id="src/main.js" highlight="1-7" type="application/octetstream" src="016/src/main.js"></script>
+	<script id="config.js" type="application/octetstream" src="004/config.js"></script>
+	<script id="data/tasks.json" type="application/octetstream" src="012/data/tasks.json"></script>
+	<script id="src/models/Tasks.js" type="application/octetstream" src="013/src/models/Tasks.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html-babel"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Wprowadzamy komponent Task (logika + style)</h1></header>
+            <details>
+  <p>
+    Zależności między stylami i komponentem Task są zupełnie niejawne i opierają się na używaniu tych samych stringów w obu plikach.
+  </p>
+  <p>
+    Spróbujmy jakoś bardziej związać ze sobą te dwa pliki. Wydzielmy komponent <code>Task</code> wraz z kodem i stylami do osobnego pliku.
+  </p>
+</details>
+
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

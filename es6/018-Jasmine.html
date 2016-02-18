@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Jasmine</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="config.js" >
+              	<script id="config.js" highlight="2-7" type="application/octetstream" src="018/config.js"></script>
+	<script id="index.html" highlight="4-9" type="application/octetstream" src="018/index.html"></script>
+	<script id="index.test.html" highlight="1-29" type="application/octetstream" src="018/index.test.html"></script>
+	<script id="src/components/Task/Task.css" highlight="1-3" type="application/octetstream" src="018/src/components/Task/Task.css"></script>
+	<script id="src/components/Task/Task.js" highlight="1-5" type="application/octetstream" src="018/src/components/Task/Task.js"></script>
+	<script id="src/components/Task/Task.spec.js" highlight="1-31" type="application/octetstream" src="018/src/components/Task/Task.spec.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="016/css/styles.css"></script>
+	<script id="data/tasks.json" type="application/octetstream" src="012/data/tasks.json"></script>
+	<script id="src/main.js" type="application/octetstream" src="016/src/main.js"></script>
+	<script id="src/components/Tasks.js" type="application/octetstream" src="016/src/components/Tasks.js"></script>
+	<script id="src/models/Tasks.js" type="application/octetstream" src="013/src/models/Tasks.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html-babel" file="index.test.html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Testowanie przez Jasmine w podejściu komponentowym</h1></header>
+            <details>
+  <p>
+    Obecnie we wszystkich frameworkach dominujące jest podejście zorientowane na komponentach (zakres ich obowiązków jednak trochę się różni)
+  </p>
+  <p>
+    W jednym katalogu trzymamy wszystko co dotyczy danego komponentu - dzięki temu możemy go łatwo przemieszczać (wszystkie ścieżki relatywne). Komponent można też łatwo usunąć wraz  ze wszystkimi rzeczami, których używa. A co najważniejsze - ładując komponent on sam ładuje wszystko czego potrzebuje, więc ostatecznie nasza aplikacja (albo np. pojedyncza strona) będzie zawsze ładowała dokładnie tyle ile jest potrzebne.
+  </p>
+</details>
+
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

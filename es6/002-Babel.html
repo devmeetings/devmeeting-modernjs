@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Babel</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="config.js" >
+              	<script id="config.js" highlight="1-11" type="application/octetstream" src="002/config.js"></script>
+	<script id="index.html" highlight="9-16" type="application/octetstream" src="002/index.html"></script>
+	<script id="js/main.js" highlight="1-14" type="application/octetstream" src="002/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="13-18" type="application/octetstream" src="002/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="6-11" type="application/octetstream" src="002/js/views/TasksView.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="001/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Transpilacja w locie przez Babel</h1></header>
+            <details>
+  <p>
+    W <code>system.js</code> możemy przetwarzać moduły zanim zostaną załadowane.
+    Pozwala nam to np. na użycie nowej składni ES6 / ES2015 nawet w przeglądarkach, które jeszcze jej nie wspierają.
+  </p>
+  <p>Aby korzystać z ES6 wpinamy <code>transpiler</code> - np. <code>Babel</code></p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

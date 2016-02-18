@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Moduły</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="config.js" >
+              	<script id="config.js" highlight="1-5" type="application/octetstream" src="004/config.js"></script>
+	<script id="index.html" highlight="11-19" type="application/octetstream" src="004/index.html"></script>
+	<script id="src/main.js" highlight="1-13" type="application/octetstream" src="004/src/main.js"></script>
+	<script id="src/models/Tasks.js" highlight="1-23" type="application/octetstream" src="004/src/models/Tasks.js"></script>
+	<script id="src/views/TasksView.js" highlight="1-37" type="application/octetstream" src="004/src/views/TasksView.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="001/css/styles.css"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html-babel"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Tak wyglądają moduły w ES2015</h1></header>
+            <details>
+  <p>Jedną z głównych nowości w ES6 / ES2015 jest ustandaryzowana składnia modułow</p>
+  <p>Więcej o modułach: <a href="http://www.2ality.com/2014/09/es6-modules-final.html">http://www.2ality.com/2014/09/es6-modules-final.html</a></p>
+</details>
+<aside file="src/main.js" order="1">
+  <p>Moduły mogą definiować domyślny eksport (czyli eksport całego obiektu).</p>
+</aside>
+<aside file="src/main.js" order="2">
+  <p>Mozna też eksportować z modułu pojedyncze funkcje / zmienne i w ten sposób je importować</p>
+  <p>Korzystając z <code>import {TaskView as View}</code> można też zmieniać lokalne nazwy.</p>
+</aside>
+<aside file="src/views/TasksView.js" order="1">
+  <p>
+    Moduły ES6 są kompatybilne z innymi formatami. Nowością jest <code>export default</code>.
+    Notacją <code>* as _</code> importujemy wszystkie funkcje z modułu i umieszczamy w zmiennej <code>_</code>
+  </p>
+</aside>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

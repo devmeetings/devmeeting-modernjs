@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>System.js</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="config.js" >
+              	<script id="config.js" highlight="1-9" type="application/octetstream" src="001/config.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="001/css/styles.css"></script>
+	<script id="index.html" highlight="1-19" type="application/octetstream" src="001/index.html"></script>
+	<script id="js/main.js" highlight="1-13" type="application/octetstream" src="001/js/main.js"></script>
+	<script id="js/models/Tasks.js" highlight="1-20" type="application/octetstream" src="001/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" highlight="1-38" type="application/octetstream" src="001/js/views/TasksView.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Uproszczony setup z użyciem System.js</h1></header>
+            <details>
+  <p>Upraszczamy konfigurację i będziemy wykorzystywać wyłącznie <code>System.js</code></p>
+  <p>Niezależnie od tego którą konwencje wybierasz i pomimo tego, że <code>System.js</code> pozwala
+    obsłużyć dowolny rodzaj modułów Twój kod powinien być spójny. Przepisujemy aplikację na CommonJS</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

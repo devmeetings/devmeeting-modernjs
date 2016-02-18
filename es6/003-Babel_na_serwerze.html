@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Babel na serwerze</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          <div class="xp-column">
+            <xp-editor active="config.js" >
+              	<script id="config.js" highlight="1-8" type="application/octetstream" src="003/config.js"></script>
+	<script id="index.html" highlight="9-14" type="application/octetstream" src="003/index.html"></script>
+	<script id="js/main.js" highlight="1-11" type="application/octetstream" src="003/js/main.js"></script>
+	<script id="css/styles.css" type="application/octetstream" src="001/css/styles.css"></script>
+	<script id="js/models/Tasks.js" type="application/octetstream" src="002/js/models/Tasks.js"></script>
+	<script id="js/views/TasksView.js" type="application/octetstream" src="002/js/views/TasksView.js"></script>
+            </xp-editor>
+          </div>
+          <div class="xp-resize-column"></div>
+          <div class="xp-column">
+            <xp-preview runner="html-babel"></xp-preview>
+          </div>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Transpilacja po stronie serwera</h1></header>
+            <details>
+  <p>W praktyce najczęściej jednak transpilujemy kod przed wysłaniem go do przeglądarki.</p>
+  <p>Pozwala to na szybsze ładowanie i inkrementacyjną transpilację</p>
+  <p>W slajdach będziemy więc stosować składnię ES6, ale transpilacją przez <code>Babel</code> zajmie się serwer.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
