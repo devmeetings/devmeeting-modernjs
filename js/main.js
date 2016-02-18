@@ -1,13 +1,14 @@
 "use strict";
 
-var model = require('./models/Tasks');
-var TasksView = require('./views/TasksView');
+//2/ Dzięki babel możemy korzystać z nowych rzeczy z ES2015...
+import model from './models/Tasks';
+import TasksView from './views/TasksView';
 
-var view = TasksView(
+/// ... takich jak stałe...
+const view = TasksView(
   document.querySelector('#todos'),
   model
 );
 
-setInterval(function () {
-  view.render(new Date().getTime());
-}, 500);
+/// ... czy lambdy.
+setInterval(() => view.render(new Date().getTime()), 500);

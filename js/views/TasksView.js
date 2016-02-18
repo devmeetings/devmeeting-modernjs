@@ -6,7 +6,6 @@ var tpl = _.template(
   '<div class="task"><span><%= name %></span> <span><%= time %></span></div>'
 );
 
-/// ... lub przypisujemy cały obiekt do `module.exports`
 module.exports = TasksView;
 
 function TasksView($app, Model) {

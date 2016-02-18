@@ -13,7 +13,6 @@ var tasks = [
   }
 ];
 
-//3/ W CommonJS dopisujemy eksporty do `exports`
 exports.getTasks = function () {
   return tasks;
 };
