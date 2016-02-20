@@ -13,29 +13,29 @@ export class TasksView {
   }
 
   render(now) {
-    this.$app.innerHTML = '';
-
-    const tasks = this.model.getTasks()
-    const $tasks = [];
-
-    //5/ Wartości, które się zmieniają deklarujemy przez `let`
-    for (let k in tasks) {
-      $tasks.push(
-        this._renderTask(now, tasks[k])
-      );
-    }
-    // console.log(k);
-
-    this.$app.innerHTML = $tasks.join('\n');
+    // Będziemy od razu przypisywać do DOM
+    this.$app.innerHTML = this.model.tasks
+      //2/ Korzystamy z `map` - przetwarzamy każdy element tablicy przez funkcję
+      .map(function (task) {
+        return this._renderTask(now, task);
+      // Pojawia się problem z kontekstem - musimy go przekazać
+      }, this)
+      // Na koniec zamieniamy w string
+      .join('\n');
   }
 
   _renderTask(now, task) {
-    const data = {
-      name: task.name,
-      time: (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min',
-    };
-
-    return this.tpl(data);
+    const time = (((task.finished || now) - task.started) / 1000 / 60).toFixed(1);
+    const name = task.name; 
+    //8/ Kilka kolejnych featurów z ES2015
+    return this.tpl(
+      //2/ propsa tworzymy na podstawie nazwy zmiennej
+      {
+        name,
+        // I korzystamy ze string interpolation (zamiast konkatenacji)
+        time: `${time} min`
+      }
+    );
   }
 
 }

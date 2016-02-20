@@ -1,18 +1,5 @@
 <details>
-  <div style="text-align:left">
-    <p>Problemem z <code>var</code> w JS jest zasięg funkcyjny. Czyli:</p>
-    <pre style="width: 90%; overflow: visible">
-      console.log(k); // undefined (even in strict mode)
-
-      for (var k in [0, 1, 2]) {
-        ...     
-      }
-
-      console.log(k); // 2
-    </pre>
-    <p>ES2015 wprowadza nowe sposoby deklarowania zmiennych (i stałych).</p>
-  </div>
+  <p>W widoku przetwarzamy listę zadań na ich reprezentację w DOM.</p>
+  <p>Obecnie korzystamy z pętli, ale można zrobić to ładniej.</p>
 </details>
-<aside file="src/views/TasksView.js" order="2">
-  <p>Zarówno <code>const</code> jak i <code>let</code> mają zasięg blokowy.</p>
-</aside>
+
