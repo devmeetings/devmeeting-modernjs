@@ -13,7 +13,6 @@ var tasks = [
   }
 ];
 
-//9/ A tak wygląda ta sama klasa w ES2015. Lepiej? :)
 class TasksModel {
   constructor(tasks) {
     this.tasks = tasks;
@@ -23,8 +22,5 @@ class TasksModel {
     return this.tasks;
   }
 }
-
-//3/ Zobaczmy w konsoli czy są jakieś różnice
-console.dir(new TasksModel([]));
 
 export default new TasksModel(tasks);

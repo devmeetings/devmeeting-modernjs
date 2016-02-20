@@ -3,7 +3,7 @@
 import model from './models/Tasks';
 import {TasksView} from './views/TasksView';
 
-const view = TasksView(
+const view = new TasksView(
   document.querySelector('#todos'),
   model
 );

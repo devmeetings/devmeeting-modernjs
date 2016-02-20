@@ -2,34 +2,42 @@
 
 import * as _ from 'lodash';
 
-var tpl = _.template(
-  '<div class="task"><span><%= name %></span> <span><%= time %></span></div>'
-);
-
-export function TasksView($app, Model) {
-  return {
-    render: renderTasks
-  };
-
-  function renderTasks(now) {
-    $app.innerHTML = '';
-
-    var k, $task, tasks, $tasks;
-    tasks = Model.getTasks()
-    $tasks = [];
-    for (k in tasks) {
-      $tasks.push(renderTask(tasks[k], now));
-    }
-    $app.innerHTML = $tasks.join('\n');
+// W modułach ES2015 możemy eksportować klasę
+export class TasksView {
+  
+  //7/ W konstruktorze przypisujemy wartości
+  constructor($app, model) {
+    this.$app = $app;
+    this.model = model;
+    this.tpl = _.template(
+      '<div class="task"><span><%= name %></span> <span><%= time %></span></div>'
+    );
   }
 
-  function renderTask(task, now) {
+  //12/ Nasze publiczne API
+  render(now) {
+    var k, $task, tasks, $tasks;
+    this.$app.innerHTML = '';
 
+    tasks = this.model.getTasks()
+    $tasks = [];
+    for (k in tasks) {
+      $tasks.push(
+        this._renderTask(now, tasks[k])
+      );
+    }
+
+    this.$app.innerHTML = $tasks.join('\n');
+  }
+
+  //8/ Ta funkcja przestała jednak być prywatna, więc zastosowaliśmy konwencję
+  _renderTask(now, task) {
     var data = {
       name: task.name,
       time: (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min',
     };
 
-    return tpl(data);
+    return this.tpl(data);
   }
+
 }
