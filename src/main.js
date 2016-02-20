@@ -1,11 +1,10 @@
 "use strict";
 
 import {TasksModel} from './models/Tasks';
-import {TasksView} from './views/TasksView';
+import {TasksView} from './views/Tasks';
 
 const model = new TasksModel([]);
 
-//6/ Okazuje się, że podobna funkcja jest już w przeglądarkach!
 fetch('data/tasks.json')
   .then((response) => response.json())
   .then(

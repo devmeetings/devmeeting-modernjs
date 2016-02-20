@@ -1,5 +1,7 @@
 "use strict";
 
+import {TaskView} from './Task';
+
 export class TasksView {
   
   constructor($app, model, options) {
@@ -15,20 +17,9 @@ export class TasksView {
       .filter((task) => {
         return onlyActive ? !task.finished : true;
       })
-      .map((task) => this._renderTask(now, task))
+      // Tworzymy nowy widok i renderujemy
+      .map((task) => new TaskView(task).render(now))
       .join('\n');
-  }
-
-  _renderTask(now, task) {
-    const time = (((task.finished || now) - task.started) / 1000 / 60);
-    const name = task.name; 
-
-    return `
-      <div class="task">
-        <span>${name}</span>
-        <span>${time.toFixed(1)} min</span>
-      </div>
-    `;
   }
 
 }
