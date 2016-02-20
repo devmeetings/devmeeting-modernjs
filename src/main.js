@@ -1,7 +1,7 @@
 "use strict";
 
 import {TasksModel} from './models/Tasks';
-import {TasksView} from './views/Tasks';
+import {TasksView} from './components/Tasks';
 
 const model = new TasksModel([]);
 

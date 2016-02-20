@@ -1,6 +1,6 @@
 "use strict";
 
-//21/ Wydzielamy osobną klasę widoku zadania
+// Widok pojedynczego zadania jest teraz osobnym komponentem
 export class TaskView {
 
   constructor(task) {

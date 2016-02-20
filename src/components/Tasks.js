@@ -1,6 +1,6 @@
 "use strict";
 
-import {TaskView} from './Task';
+import {TaskView} from './Task/Task';
 
 export class TasksView {
   
@@ -17,7 +17,6 @@ export class TasksView {
       .filter((task) => {
         return onlyActive ? !task.finished : true;
       })
-      // Tworzymy nowy widok i renderujemy
       .map((task) => new TaskView(task).render(now))
       .join('\n');
   }
