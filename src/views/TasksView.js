@@ -1,13 +1,11 @@
 "use strict";
 
-// Biblioteki, ktore nie mają `export default` importujemy tak:
 import * as _ from 'lodash';
 
 var tpl = _.template(
   '<div class="task"><span><%= name %></span> <span><%= time %></span></div>'
 );
 
-// Poprzednio module.exports = TasksView;
 export function TasksView($app, Model) {
   return {
     render: renderTasks

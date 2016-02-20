@@ -1,8 +1,6 @@
 "use strict";
 
-// Importujemy cały moduł
 import model from './models/Tasks';
-// Lub tylko jeden z `eksportów` za pomocą `{..}`
 import {TasksView} from './views/TasksView';
 
 const view = TasksView(

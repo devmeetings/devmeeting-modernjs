@@ -13,11 +13,18 @@ var tasks = [
   }
 ];
 
-// Używamy domyślnego eksportu (poprzednio `exports.getTasks = function()`)
-export default {
-  // W ES6 możemy też używać skróconej formy definiowania funkcji w obiektach..
-  getTasks() {
-  // ...zamiast `getTasks: function ()`
-    return tasks;
-  }
+//3/ Klasa w ES5 to funkcja (konstruktor)
+function TasksModel(tasks) {
+  this.tasks = tasks;
+}
+
+//3/ A do prototypu dopisujemy rzeczy współdzielone przez wszystkie instancje
+TasksModel.prototype.getTasks = function () {
+  return this.tasks;
 };
+
+// Zobaczmy co powie na to konsola
+console.dir(new TasksModel([]));
+
+// Eksportujemy nową instancję stworzoną przez `new`
+export default new TasksModel(tasks);
