@@ -13,18 +13,18 @@ var tasks = [
   }
 ];
 
-//3/ Klasa w ES5 to funkcja (konstruktor)
-function TasksModel(tasks) {
-  this.tasks = tasks;
+//9/ A tak wygląda ta sama klasa w ES2015. Lepiej? :)
+class TasksModel {
+  constructor(tasks) {
+    this.tasks = tasks;
+  }
+
+  getTasks() {
+    return this.tasks;
+  }
 }
 
-//3/ A do prototypu dopisujemy rzeczy współdzielone przez wszystkie instancje
-TasksModel.prototype.getTasks = function () {
-  return this.tasks;
-};
-
-// Zobaczmy co powie na to konsola
+//3/ Zobaczmy w konsoli czy są jakieś różnice
 console.dir(new TasksModel([]));
 
-// Eksportujemy nową instancję stworzoną przez `new`
 export default new TasksModel(tasks);
