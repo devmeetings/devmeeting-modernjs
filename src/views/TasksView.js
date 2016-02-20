@@ -9,7 +9,6 @@ export class TasksView {
   }
 
   render(now) {
-    // `Destructuring assignment` - rozbijamy obiekt
     const {onlyActive} = this.options;
 
     this.$app.innerHTML = this.model.tasks
@@ -24,7 +23,6 @@ export class TasksView {
     const time = (((task.finished || now) - task.started) / 1000 / 60);
     const name = task.name; 
 
-    //6/ Dzięki Template strings możemy nawet zrezygnować z naszego templatu.
     return `
       <div class="task">
         <span>${name}</span>

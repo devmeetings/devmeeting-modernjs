@@ -1,20 +1,13 @@
 "use strict";
 
-const now = new Date().getTime();
-const tasks = [
-  {
-    name: 'ModernJS training',
-    started: now - 1000 * 60 * 10
-  },
-  {
-    name: 'Learning JavaScript',
-    started: now - 1000 * 3600 * 24,
-    finished: now - 1000 * 3600 * 6
-  }
-];
-
+//9/ Model będzie teraz tylko eksportował klasę
 export class TasksModel {
   constructor(tasks) {
+    this._tasks = tasks;
+  }
+
+  //3/ Użyjemy settera, aby zapamiętać zadania
+  set tasks(tasks) {
     this._tasks = tasks;
   }
 
@@ -22,5 +15,3 @@ export class TasksModel {
     return this._tasks;
   }
 }
-
-export default new TasksModel(tasks);
