@@ -13,13 +13,11 @@ const tasks = [
   }
 ];
 
-// Możemy eksportować zarówno default jak i pojedyncze deklaracje
 export class TasksModel {
   constructor(tasks) {
     this._tasks = tasks;
   }
 
-  //3/ W ES2015 (a właś. to już w ES5) mamy też możliwość definiowania getterów
   get tasks() {
     return this._tasks;
   }

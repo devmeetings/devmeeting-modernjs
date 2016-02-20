@@ -3,9 +3,20 @@
 import model from './models/Tasks';
 import {TasksView} from './views/TasksView';
 
-const view = new TasksView(
+const activeView = new TasksView(
   document.querySelector('#todos'),
-  model
+  model,
+  {onlyActive: true}
 );
 
-setInterval(() => view.render(new Date().getTime()), 500);
+const view = new TasksView(
+  document.querySelector('#todos2'),
+  model,
+  {}
+);
+
+setInterval(() => {
+  const now = new Date().getTime();
+  view.render(now);
+  activeView.render(now);
+}, 500);
