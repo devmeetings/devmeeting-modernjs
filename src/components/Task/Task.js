@@ -1,6 +1,8 @@
 "use strict";
 
-// Widok pojedynczego zadania jest teraz osobnym komponentem
+// Importujemy style (bez from - import dla efektów ubocznych)
+import './Task.css!';
+
 export class TaskView {
 
   constructor(task) {
