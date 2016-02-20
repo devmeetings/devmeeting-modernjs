@@ -1,6 +1,5 @@
 "use strict";
 
-// Importujemy style (bez from - import dla efektów ubocznych)
 import './Task.css!';
 
 export class TaskView {

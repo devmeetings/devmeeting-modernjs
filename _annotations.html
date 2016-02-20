@@ -1,10 +1,9 @@
 <details>
   <p>
-    Niestety musimy teraz pamiętać, żeby dołączyć style. Co gdyby w pliku JS zaimportować to co jest potrzebne?
+    Obecnie we wszystkich frameworkach dominujące jest podejście zorientowane na komponentach (zakres ich obowiązków jednak trochę się różni)
   </p>
   <p>
-    <code>System.js</code> wspiera plugin do ładowania plików innych niż JS. Np. możemy załadować CSS, JSONa, Text (HTML) czy obrazek.
+    W jednym katalogu trzymamy wszystko co dotyczy danego komponentu - dzięki temu możemy go łatwo przemieszczać (wszystkie ścieżki relatywne). Komponent można też łatwo usunąć wraz  ze wszystkimi rzeczami, których używa. A co najważniejsze - ładując komponent on sam ładuje wszystko czego potrzebuje, więc ostatecznie nasza aplikacja (albo np. pojedyncza strona) będzie zawsze ładowała dokładnie tyle ile jest potrzebne.
   </p>
-  <p><a href="https://github.com/systemjs/systemjs#plugins">List pluginów do System.js</a></p>
 </details>
 
