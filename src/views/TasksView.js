@@ -2,10 +2,8 @@
 
 import * as _ from 'lodash';
 
-// W modułach ES2015 możemy eksportować klasę
 export class TasksView {
   
-  //7/ W konstruktorze przypisujemy wartości
   constructor($app, model) {
     this.$app = $app;
     this.model = model;
@@ -14,25 +12,25 @@ export class TasksView {
     );
   }
 
-  //12/ Nasze publiczne API
   render(now) {
-    var k, $task, tasks, $tasks;
     this.$app.innerHTML = '';
 
-    tasks = this.model.getTasks()
-    $tasks = [];
-    for (k in tasks) {
+    const tasks = this.model.getTasks()
+    const $tasks = [];
+
+    //5/ Wartości, które się zmieniają deklarujemy przez `let`
+    for (let k in tasks) {
       $tasks.push(
         this._renderTask(now, tasks[k])
       );
     }
+    // console.log(k);
 
     this.$app.innerHTML = $tasks.join('\n');
   }
 
-  //8/ Ta funkcja przestała jednak być prywatna, więc zastosowaliśmy konwencję
   _renderTask(now, task) {
-    var data = {
+    const data = {
       name: task.name,
       time: (((task.finished || now) - task.started) / 1000 / 60).toFixed(1) + ' min',
     };
