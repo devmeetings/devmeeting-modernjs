@@ -12,4 +12,12 @@ export class TasksModel {
   get tasks() {
     return this._tasks;
   }
+
+  //6/ Dodawanie nowego zadania w modelu
+  add(title) {
+    this._tasks.unshift({
+      name: title,
+      started: new Date().getTime()
+    });
+  }
 }

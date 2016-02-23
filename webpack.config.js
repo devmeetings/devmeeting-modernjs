@@ -1,8 +1,6 @@
 
 module.exports = {
-  // Nasz główny plik
   entry: ['./index.js'],
-  //4/ Całośc będziemy budować do podkatalogu build
   output: {
     filename: '[name].js',
     path: './build'

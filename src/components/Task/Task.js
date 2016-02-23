@@ -7,6 +7,7 @@ export class TaskView {
   constructor(task) {
     this.task = task;
   }
+
   render(now) {
     const task = this.task;
     const isActive = !task.finished;
