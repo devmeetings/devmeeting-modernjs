@@ -1,0 +1,11 @@
+config.js
+css/styles.css
+data/tasks.json
+index.html
+index.test.html
+src/components/Task/Task.css
+src/components/Task/Task.js
+src/components/Task/Task.spec.js
+src/components/Tasks.js
+src/models/Tasks.js
+
