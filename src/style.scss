@@ -1,0 +1,14 @@
+/// Import zmiennych
+@import "variables";
+
+.md {
+  /// BEM :)
+  &__area {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    border: 1px solid $borderColor;
+    background: $background;
+    padding: 10px;
+  }
+}

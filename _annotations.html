@@ -1,12 +1,3 @@
 <details>
-  <p>Nasza aplikacja napisana została w ES6 i używa <code>import</code>, które tak jak <code>require</code> natywnie dostępne jest tylko na platformie NodeJS. <code>babel</code> pozwala na transpilacje ES6 do ES5, a <code>browserify</code> na utworzenie tzw. <em>bundle</em> czyli pojedyńczego pliku ze wszystkimi zależnościami (przy użyciu <code>require</code>).</p>
-  <pre>npm i -D grunt-babel babel-preset-es2015 grunt-browserify</pre>
-  <p><code>babel</code> wymaga konfiguracji. Może zostać skonfigurowany w <code>Gruntfile.js</code> lecz łatwiej umieścić ją w <code>.babelrc</code> by zapewnić też wsparcie dla IDE tj. <em>WebStorm</em></p>
-  <pre>
-// .babelrc
-{
-  "presets": ["es2015"]
-}
-  </pre>
-  <p><code>.babelrc</code> jest dla wszystkich build toolów taki sam więc wzrasta przenośność konfiguracji między projektami.</p>
+  <p>Stylujemy aplikację korzystając z SCSS.</p>
 </details>
