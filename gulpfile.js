@@ -17,12 +17,16 @@ gulp.task('babel', function() {
     .pipe(gulp.dest('build'))
 });
 
-//5/ SCSS -> CSS
 gulp.task('sass', function() {
   return gulp.src('src/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('build'))
 });
 
-/// Domyślne zadanie
+//4/ Obserwuj zmiany w plikach
+gulp.task('watch', function() {
+  gulp.watch(['src/**/*.scss'], ['sass']);
+  gulp.watch(['src/**/*.js'], ['babel']);
+});
+
 gulp.task('default', ['htmlmin', 'babel', 'sass']);
