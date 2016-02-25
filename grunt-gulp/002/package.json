@@ -1,0 +1,13 @@
+{
+  "name": "grunt-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmeetings/devmeeting-modernjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
+  },
+  "homepage": "https://github.com/devmeetings/devmeeting-modernjs#readme"
+}
