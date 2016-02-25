@@ -1,0 +1,12 @@
+@import "_variables";
+
+.md {
+  &__area {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    border: 1px solid var(--borderColor);
+    background: var(--backgroundColor);
+    padding: 10px;
+  }
+}

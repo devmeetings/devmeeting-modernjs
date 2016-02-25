@@ -1,0 +1,21 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "html-webpack-plugin": "^2.9.0",
+    "webpack": "^1.12.14"
+  },
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmeetings/devmeeting-modernjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
+  },
+  "homepage": "https://github.com/devmeetings/devmeeting-modernjs#readme"
+}
