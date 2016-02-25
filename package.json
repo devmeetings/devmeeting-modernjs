@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "html-webpack-plugin": "^2.9.0",
+    "webpack": "^1.12.14"
+  },
   "scripts": {
     "start": "webpack"
   },
