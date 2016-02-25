@@ -34,12 +34,11 @@ var config = {
       //4/ Loader dla styli. Loadery można chainować
       {
         test: /\.css$/,
-        loader: "style!css!postcss"
+        loader: "style!css?module!postcss"
       }
     ]
   },
 
-  //10/ Konfiguracja dla PostCSS
   postcss: function () {
     return [
       require("postcss-import")({ addDependencyTo: webpack }),
