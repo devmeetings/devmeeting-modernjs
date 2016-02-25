@@ -65,7 +65,6 @@ module.exports = function(grunt) {
     },
   });
 
-  /// Automatyczne ładowanie używanych pluginów
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', ['htmlmin', 'babel', 'browserify', 'sass']);
