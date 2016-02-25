@@ -36,7 +36,6 @@ module.exports = function(grunt) {
       }
     },
 
-    //10/ SCSS do CSS
     sass: {
       options: {
         sourceMap: true
@@ -47,15 +46,35 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    //19/ Obserwuj zmiany w plikach
+    watch: {
+      //7/ Uruchom taski babel i browserify na zaminy w plikach *.js
+      js: {
+        files: ['**/*.js'],
+        tasks: ['babel', 'browserify'],
+        options: {
+          spawn: false,
+        },
+      },
+      //7/ Uruchom task sass na zmiany w plikach *.scss
+      css: {
+        files: ['**/*.scss'],
+        tasks: ['sass'],
+        options: {
+          spawn: false,
+        },
+      },
+    },
   });
 
-  //4/ Ładowanie używanych pluginów
+  //5/ Ładowanie używanych pluginów
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  /// Rejestracja domyślnego taska
   grunt.registerTask('default', ['htmlmin', 'babel', 'browserify', 'sass']);
 
 };

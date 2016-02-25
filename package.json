@@ -20,6 +20,7 @@
     "grunt-browserify": "^4.0.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^1.1.0"
   },
   "dependencies": {
