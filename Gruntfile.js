@@ -47,9 +47,7 @@ module.exports = function(grunt) {
       }
     },
 
-    //19/ Obserwuj zmiany w plikach
     watch: {
-      //7/ Uruchom taski babel i browserify na zaminy w plikach *.js
       js: {
         files: ['**/*.js'],
         tasks: ['babel', 'browserify'],
@@ -57,7 +55,6 @@ module.exports = function(grunt) {
           spawn: false,
         },
       },
-      //7/ Uruchom task sass na zmiany w plikach *.scss
       css: {
         files: ['**/*.scss'],
         tasks: ['sass'],
@@ -68,12 +65,8 @@ module.exports = function(grunt) {
     },
   });
 
-  //5/ Ładowanie używanych pluginów
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-babel');
-  grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  /// Automatyczne ładowanie używanych pluginów
+  require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', ['htmlmin', 'babel', 'browserify', 'sass']);
 
