@@ -1,6 +1,15 @@
 <details>
-  <p>Do zaimportowania logo będziemy potrzebować <code>file-loader</code>.</p>
+  <p>PostCSS pozwala na transformacje styli za pomocą wielu pluginów napisanych w JavaScript.</p>
+  <p>W testach wydajnościowych jest znacznie szybszy niż <code>libsass</code> napisany w C++!</p>
   <pre>
-npm i -D file-loader
+PostCSS 5.0.11: 40 ms
+PostCSS 5.0.10: 60ms    (1.5 times slower)
+Rework:         75 ms   (1.9 times slower)
+libsass:        76 ms   (1.9 times slower)
+Less:           147 ms  (3.7 times slower)
+Stylus:         166 ms  (4.1 times slower)
+Stylecow:       258 ms  (6.4 times slower)
+Ruby Sass:      1042 ms (26.0 times slower)
   </pre>
+  <p><a href="https://evilmartians.com/chronicles/postcss-1_5x-faster">Więcej o wydajności.</a></p>
 </details>

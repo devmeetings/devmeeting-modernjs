@@ -31,7 +31,24 @@ var config = {
         test: /\.png$/,
         loader: "file"
       },
+      //4/ Loader dla styli. Loadery można chainować
+      {
+        test: /\.css$/,
+        loader: "style!css!postcss"
+      }
     ]
+  },
+
+  //10/ Konfiguracja dla PostCSS
+  postcss: function () {
+    return [
+      require("postcss-import")({ addDependencyTo: webpack }),
+      require("postcss-url")(),
+      require("postcss-cssnext")(),
+      require("postcss-nested")(),
+      require("postcss-browser-reporter")(),
+      require("postcss-reporter")(),
+    ];
   }
 };
 
