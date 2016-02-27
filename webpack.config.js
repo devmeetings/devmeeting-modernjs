@@ -20,16 +20,16 @@ var config = {
     }),
   ],
 
-  //12/ Używaj loaderów do transofmacji plików podczas ich ładowania
   module: {
     loaders: [
       {
-        /// zastosuj do plików, których ścieżka
         test: /\.js$/,
-        /// nie stosuj do plików, których ścieżka
         exclude: /node_modules/,
-        /// nazwa loadera
         loader: "babel"
+      },
+      {
+        test: /\.png$/,
+        loader: "file"
       },
     ]
   }
