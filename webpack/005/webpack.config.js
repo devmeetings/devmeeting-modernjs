@@ -16,7 +16,7 @@ var config = {
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true },
-      filename: "../index.html"
+      filename: "index.html"
     }),
   ]
 };

@@ -3,6 +3,10 @@ var path              = require("path");
 var HTMLWebpackPlugin = require("html-webpack-plugin");
 
 var config = {
+  //2/ Dostępne jest kilka ustawień np. "inline-source-maps", "eval",
+  /// a te generuje osobny plik mapy
+  devtool: "source-maps",
+
   entry: [
     path.resolve("src/app.js"),
   ],
@@ -31,7 +35,6 @@ var config = {
         test: /\.png$/,
         loader: "file"
       },
-      //4/ Loader dla styli. Loadery można chainować
       {
         test: /\.css$/,
         loader: "style!css?module!postcss"

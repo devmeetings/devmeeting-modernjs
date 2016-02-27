@@ -9,28 +9,32 @@
       </head>
       <body class="xp-slide">
         <div class="xp-row with-comments">
-          <div class="xp-column">
-            <xp-editor active=".babelrc" >
+          <div class="xp-column" style="width: 65%">
+            <xp-editor active=".babelrc" tree>
               	<script id=".babelrc" highlight="1" type="application/octetstream" src="006/.babelrc"></script>
 	<script id="package.json" highlight="4-13" type="application/octetstream" src="006/package.json"></script>
-	<script id="webpack.config.js" highlight="18-31" type="application/octetstream" src="006/webpack.config.js"></script>
+	<script id="webpack.config.js" highlight="18-38" type="application/octetstream" src="006/webpack.config.js"></script>
 	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
-	<script id="index.html" type="application/octetstream" src="004/index.html"></script>
-	<script id="build/app.js" type="application/octetstream" src="004/build/app.js"></script>
 	<script id="src/app.js" type="application/octetstream" src="005/src/app.js"></script>
-	<script id="src/index.html" type="application/octetstream" src="003/src/index.html"></script>
+	<script id="src/index.html" type="application/octetstream" src="004/src/index.html"></script>
             </xp-editor>
           </div>
           <div class="xp-resize-column"></div>
-          <div class="xp-column">
-            <xp-preview runner="html-babel"></xp-preview>
+          <div class="xp-column" style="width: 35%">
+            <xp-preview runner="html"></xp-preview>
           </div>
         </div>
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
             <header><h1>Używaj babel-loader to transpilacji ES6 do ES5</h1></header>
-            
+            <details>
+  <p>W <code>webpack</code> korzystamy głównie nie z pluginów, a tzw. <em>loaderów</em>.</p>
+  <p>Loadery mają szerokie zastosowanie podczas importowania plików w kodzie JS.</p>
+  <p>Czy to znaczy, że można importować pliki inne niż JS? <strong>Tak!</strong></p>
+  <p>Na razie zajmiemy się jednak transpilacją ES6 do ES5. Wkorzystamy <code>babel-loader</code>. Warto zwrócić uwagę, że możemy wykorzystać ten sam <code>.babelrc</code> co w przypadku <code>grunt</code> czy <code>gulp</code>.</p>
+</details>
+
           </xp-annotations>
         </div>
       </body>

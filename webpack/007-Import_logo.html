@@ -4,16 +4,20 @@
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>index.html</title>
+        <title>Import logo</title>
         <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
       </head>
       <body class="xp-slide">
         <div class="xp-row with-comments">
           <div class="xp-column" style="width: 65%">
-            <xp-editor active="src/index.html" tree>
-              	<script id="src/index.html" highlight="1-18" type="application/octetstream" src="003/src/index.html"></script>
+            <xp-editor active="package.json" tree>
+              	<script id="package.json" highlight="2-16" type="application/octetstream" src="007/package.json"></script>
+	<script id="src/app.js" highlight="1-5,7-18" type="application/octetstream" src="007/src/app.js"></script>
+	<script id="src/md-logo.png" type="application/octetstream" src="007/src/md-logo.png"></script>
+	<script id="webpack.config.js" highlight="20-36" type="application/octetstream" src="007/webpack.config.js"></script>
+	<script id=".babelrc" type="application/octetstream" src="006/.babelrc"></script>
 	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
-	<script id="package.json" type="application/octetstream" src="002/package.json"></script>
+	<script id="src/index.html" type="application/octetstream" src="004/src/index.html"></script>
             </xp-editor>
           </div>
           <div class="xp-resize-column"></div>
@@ -24,9 +28,12 @@
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
-            <header><h1>Utwórz plik index.html</h1></header>
+            <header><h1>Importowanie plików innych niż JS dzięki loaderom</h1></header>
             <details>
-  <p>Tworzymy plik index.html dla naszej aplikacji.</p>
+  <p>Do zaimportowania logo będziemy potrzebować <code>file-loader</code>.</p>
+  <pre>
+npm i -D file-loader
+  </pre>
 </details>
 
           </xp-annotations>

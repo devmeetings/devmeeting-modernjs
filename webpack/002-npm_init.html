@@ -9,22 +9,25 @@
       </head>
       <body class="xp-slide">
         <div class="xp-row with-comments">
-          <div class="xp-column">
-            <xp-editor active="_xp-no-preview" >
+          <div class="xp-column" style="width: 65%">
+            <xp-editor active="_xp-no-preview" tree>
               	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
 	<script id="package.json" highlight="1-18" type="application/octetstream" src="002/package.json"></script>
             </xp-editor>
           </div>
           <div class="xp-resize-column"></div>
-          <div class="xp-column">
-            <xp-preview runner="html-babel"></xp-preview>
+          <div class="xp-column" style="width: 35%">
+            <xp-preview runner="html"></xp-preview>
           </div>
         </div>
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
             <header><h1>npm init</h1></header>
-            
+            <details>
+  <p>Generujemy plik <code>package.json</code> dla naszego projektu.</p>
+</details>
+
           </xp-annotations>
         </div>
       </body>

@@ -16,14 +16,21 @@ var config = {
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true },
-      filename: "../index.html"
+      filename: "index.html"
     }),
   ],
 
-  //5/ Używaj loaderów do transofmacji plików podczas ich ładowania
+  //12/ Używaj loaderów do transofmacji plików podczas ich ładowania
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel" },
+      {
+        /// zastosuj do plików, których ścieżka
+        test: /\.js$/,
+        /// nie stosuj do plików, których ścieżka
+        exclude: /node_modules/,
+        /// nazwa loadera
+        loader: "babel"
+      },
     ]
   }
 };

@@ -16,19 +16,30 @@ var config = {
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true },
-      filename: "../index.html"
+      filename: "index.html"
     }),
   ],
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel" },
-      //2/ Opcja module dla css-loader pozwala
-      // domyślnie importować klasy ze styli
-      { test: /\.css$/, loader: "style!css?module!postcss" }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel"
+      },
+      {
+        test: /\.png$/,
+        loader: "file"
+      },
+      //4/ Loader dla styli. Loadery można chainować
+      {
+        test: /\.css$/,
+        loader: "style!css!postcss"
+      }
     ]
   },
 
+  //10/ Konfiguracja dla PostCSS
   postcss: function () {
     return [
       require("postcss-import")({ addDependencyTo: webpack }),
