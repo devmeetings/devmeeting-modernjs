@@ -1,8 +1,11 @@
 var gulp = require('gulp');
+var htmlmin = require('gulp-htmlmin');
 
-gulp.task('hello', function() {
-  console.log("Hello World!");
+//5/ Minifikacja html
+gulp.task('htmlmin', function() {
+  return gulp.src('src/index.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('.'));
 });
 
-/// Utworzenie domyślnego tasku
-gulp.task('default', ['hello']);
+gulp.task('default', ['htmlmin']);

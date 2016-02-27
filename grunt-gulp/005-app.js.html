@@ -11,24 +11,27 @@
         <div class="xp-row with-comments">
           <div class="xp-column" style="width: 65%">
             <xp-editor active="src/app.js" tree>
-              	<script id="src/app.js" highlight="1-8" type="application/octetstream" src="005/src/app.js"></script>
+              	<script id="src/app.js" highlight="1-12" type="application/octetstream" src="005/src/app.js"></script>
 	<script id="Gruntfile.js" type="application/octetstream" src="004/Gruntfile.js"></script>
 	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
-	<script id="index.html" type="application/octetstream" src="004/index.html"></script>
 	<script id="package.json" type="application/octetstream" src="004/package.json"></script>
 	<script id="src/index.html" type="application/octetstream" src="003/src/index.html"></script>
             </xp-editor>
           </div>
           <div class="xp-resize-column"></div>
           <div class="xp-column" style="width: 35%">
-            <xp-preview runner="html"></xp-preview>
+            <xp-preview runner="html" file="build/index.html"></xp-preview>
           </div>
         </div>
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
             <header><h1>Utworzenie pliku app.js</h1></header>
-            
+            <details>
+  <p>Dodajemy logikę do aplikacji. Do zamiany markdown na html użyjemy biblioteki <code>marked</code>.</p>
+  <pre>npm i -S marked</pre>
+</details>
+
           </xp-annotations>
         </div>
       </body>

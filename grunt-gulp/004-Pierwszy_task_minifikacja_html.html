@@ -11,8 +11,7 @@
         <div class="xp-row with-comments">
           <div class="xp-column" style="width: 65%">
             <xp-editor active="Gruntfile.js" tree>
-              	<script id="Gruntfile.js" highlight="1-23" type="application/octetstream" src="004/Gruntfile.js"></script>
-	<script id="index.html" highlight="1" type="application/octetstream" src="004/index.html"></script>
+              	<script id="Gruntfile.js" highlight="1-25" type="application/octetstream" src="004/Gruntfile.js"></script>
 	<script id="package.json" highlight="2-10,12-21" type="application/octetstream" src="004/package.json"></script>
 	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
 	<script id="src/index.html" type="application/octetstream" src="003/src/index.html"></script>
@@ -20,14 +19,21 @@
           </div>
           <div class="xp-resize-column"></div>
           <div class="xp-column" style="width: 35%">
-            <xp-preview runner="html"></xp-preview>
+            <xp-preview runner="html" file="build/index.html"></xp-preview>
           </div>
         </div>
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
             <header><h1>Instalacja grunt i pierwszy task: minifikacja html</h1></header>
-            
+            <details>
+  <p>W pierwszej kolejności zainstalujemy <code>grunt</code> i <code>grunt-cli</code> lokalnie tak by wszyscy koledzy z zespołu używali tych samych wersji.</p>
+  <pre>npm i -D grunt grunt-cli</pre>
+  <p>Następnie instalujemy pierwszy plugin. Służy on do minifikacji plików HTML.</p>
+  <pre>npm i -D grunt-contrib-htmlmin</pre>
+  <p>Pluginy z <code>contrib</code> w nazwie są pluginami oficjalnie wspieranymi</p>
+</details>
+
           </xp-annotations>
         </div>
       </body>

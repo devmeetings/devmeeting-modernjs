@@ -12,26 +12,35 @@
           <div class="xp-column" style="width: 65%">
             <xp-editor active=".babelrc" tree>
               	<script id=".babelrc" highlight="1" type="application/octetstream" src="006/.babelrc"></script>
-	<script id="Gruntfile.js" highlight="1-5,11-50" type="application/octetstream" src="006/Gruntfile.js"></script>
-	<script id="build/app.js" highlight="1-1309" type="application/octetstream" src="006/build/app.js"></script>
-	<script id="build/app.js.map" highlight="1" type="application/octetstream" src="006/build/app.js.map"></script>
+	<script id="Gruntfile.js" highlight="1-6,11-54" type="application/octetstream" src="006/Gruntfile.js"></script>
 	<script id="package.json" highlight="14-27" type="application/octetstream" src="006/package.json"></script>
+	<script id="src/app.js" highlight="1-8" type="application/octetstream" src="006/src/app.js"></script>
+	<script id="src/index.html" highlight="8-14" type="application/octetstream" src="006/src/index.html"></script>
 	<script id="_xp-no-preview" type="application/octetstream" src="002/_xp-no-preview"></script>
-	<script id="index.html" type="application/octetstream" src="004/index.html"></script>
-	<script id="src/app.js" type="application/octetstream" src="005/src/app.js"></script>
-	<script id="src/index.html" type="application/octetstream" src="003/src/index.html"></script>
             </xp-editor>
           </div>
           <div class="xp-resize-column"></div>
           <div class="xp-column" style="width: 35%">
-            <xp-preview runner="html"></xp-preview>
+            <xp-preview runner="html" file="build/index.html"></xp-preview>
           </div>
         </div>
         <div class="xp-resize-row"></div>
         <div class="xp-row comments">
           <xp-annotations>
             <header><h1>Transpilacja ES6 do ES5 i bundle</h1></header>
-            
+            <details>
+  <p>Nasza aplikacja napisana została w ES6 i używa <code>import</code>, które tak jak <code>require</code> natywnie dostępne jest tylko na platformie NodeJS. <code>babel</code> pozwala na transpilacje ES6 do ES5, a <code>browserify</code> na utworzenie tzw. <em>bundle</em> czyli pojedyńczego pliku ze wszystkimi zależnościami (przy użyciu <code>require</code>).</p>
+  <pre>npm i -D grunt-babel babel-preset-es2015 grunt-browserify</pre>
+  <p><code>babel</code> wymaga konfiguracji. Może zostać skonfigurowany w <code>Gruntfile.js</code> lecz łatwiej umieścić ją w <code>.babelrc</code> by zapewnić też wsparcie dla IDE tj. <em>WebStorm</em></p>
+  <pre>
+// .babelrc
+{
+  "presets": ["es2015"]
+}
+  </pre>
+  <p><code>.babelrc</code> jest dla wszystkich build toolów taki sam więc wzrasta przenośność konfiguracji między projektami.</p>
+</details>
+
           </xp-annotations>
         </div>
       </body>

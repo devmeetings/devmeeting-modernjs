@@ -2,13 +2,15 @@ module.exports = function(grunt) {
 
   //12/ Definicja tasków
   grunt.initConfig({
+    //11/ Definicja tasku odpowiada nazwie pluginu,
+    // a konfiguracja różni się pomiędzy pluginami
     htmlmin: {
       build: {
         options: {
           collapseWhitespace: true
         },
         files: {
-          'index.html': 'src/index.html',
+          'build/index.html': 'src/index.html',
         }
       }
     },

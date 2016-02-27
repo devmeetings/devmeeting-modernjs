@@ -7,7 +7,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'index.html': 'src/index.html',
+          'build/index.html': 'src/index.html',
         }
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           debug: true
         }
       },
-      dist: {
+      build: {
         files: {
           'build/app.js': ['build/app.js']
         }
