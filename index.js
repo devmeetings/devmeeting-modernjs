@@ -1,3 +1,4 @@
 import './index.html';
 import './css/styles.css';
-import './src/main.js';
+// Pliki z komponentami Reactowymi mają rozszerzenie JSX
+import './src/main.jsx';
