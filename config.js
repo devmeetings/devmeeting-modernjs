@@ -1,5 +1,5 @@
 System.config({
-  defaultJSExtensions: false,
+  defaultJSExtensions: true,
   transpiler: false,
   meta: {
     "*.css": {
@@ -9,11 +9,7 @@ System.config({
   map: {
     "css": "/cdn/systemjs/plugin-css/css-0.1.20.js",
     "lodash": "/cdn/lodash.js/3.9.3/lodash.js",
-    //2/ Dodajemy zależności dla angulara
-    "angular": "/cdn/angular.js/1.5.0/angular.js",
-    "angular-mocks": "/cdn/angular.js/1.5.0/angular-mocks.js"
-  },
-  meta: {
-    "angular": { format: "global" }
+    //1/ Dodajemy zależności dla angulara
+    "angular2": "/cdn/angular.js/2.0.0-beta.7/angular2.dev.js"
   }
 });
