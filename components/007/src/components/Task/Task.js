@@ -1,9 +1,13 @@
 "use strict";
 
-import mod from '../../module.js';
+import module from '../../module.js';
 
 import './Task.css';
 
+// Re-eksportujemy dla testów
+export const mod = module;
+
+// Kontroler też wystawiamy dla testów
 export class TaskView {
 
   get isActive() {
@@ -18,7 +22,7 @@ export class TaskView {
 };
 
 export default 'task-view';
-mod.component('taskView', {
+module.component('taskView', {
   bindings: {
     task: '<',
     now: '<'
@@ -30,5 +34,4 @@ mod.component('taskView', {
       <span>{{ $ctrl.time.toFixed(1) }} min</span>
     </div>
   `
-
 });

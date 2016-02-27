@@ -2,7 +2,8 @@
 module.exports = {
   devtool: 'inline-source-map',
   entry: {
-    'main': './index.js'
+    'main': './index.js', 
+    'main.test': './index.test.js'
   },
   output: {
     filename: '[name].js',
