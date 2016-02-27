@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="/cdn/jasmine/2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="/cdn/jasmine/2.4.1/jasmine.css">
+
+  <script src="/cdn/jasmine/2.4.1/jasmine.js"></script>
+  <script src="/cdn/jasmine/2.4.1/jasmine-html.js"></script>
+  <script src="/cdn/jasmine/2.4.1/boot.js"></script>
+
+  <script src="/cdn/systemjs/0.19.22/dist/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    System.import('./index.test.js').then(() => {
+      // Trigger jasmine again
+      window.onload();
+    });
+  </script>
+  <script src="main.test.js"></script>
+</head>
+
+<body>
+</body>
+</html>
