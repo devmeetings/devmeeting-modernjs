@@ -11,6 +11,7 @@ System.config({
     "lodash": "/cdn/lodash.js/3.9.3/lodash.js",
     //2/ Dodajemy zależności dla Reacta
     "react": "/cdn/react/0.14.6/react.js",
-    "react-dom": "/cdn/react/0.14.6/react-dom.js"
+    "react-dom": "/cdn/react/0.14.6/react-dom.js",
+    "react-addon-test-utils": "/cdn/react/0.14.6/react-with-addons.js"
   }
 });
