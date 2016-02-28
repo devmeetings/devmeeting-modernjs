@@ -5,7 +5,7 @@
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script> 
   </head>
   <body class="xp-slide">
-    <div class="xp-row" style="height:100%">
+    <div class="xp-row with-comments">
       <div class="xp-column">
         <xp-editor active="components/todo.jsx">
 <script id="components/list.jsx" type="application/octetstream" highlight="38-50">
@@ -14,15 +14,16 @@
 
   export default class List extends React.Component {
 
-    // State
     constructor (...args) {
       super(...args);
+      //4/ Początkowy stan komponentu
       this.state = {
         isInEditMode: {},
         todos: this.todos()
       };
     }
 
+    //7/ Otwarcie todosa do edycji
     onOpenEditMode (id) {
       this.setState({
         isInEditMode: {
@@ -31,6 +32,7 @@
       });
     }
 
+    //17/ Wstawienie nowego Todosa
     onChange (id, name, isDone) {
       const idx = this.state.todos
         .map((todo) => todo.id)
@@ -50,7 +52,7 @@
       });
     }
 
-    // View
+    //15/ Wszystko powyżej definiowało stan. Teraz widok.
     render () {
       return (<div>
         <h3>My Todo List</h3>
@@ -93,12 +95,14 @@
 
     constructor (...args) {
       super(...args);
+      //3/ Lokalny stan komponentu podczas edycji (powinien być też wyniesiony?)
       this.state = {
         newName: this.props.todo.name,
         isDone: this.props.todo.done
       };
     }
 
+    //6/ Synchronizacja lokalnego stanu
     componentWillReceiveProps (newProps) {
       this.setState({
         newName: newProps.todo.name,
@@ -106,11 +110,13 @@
       });
     }
 
+    //4/ Otwarcie do edycji - logika poziom wyżej
     onOpenEditMode (ev) {
       ev.preventDefault();
       this.props.onOpenEditMode();
     }
 
+    //3/ Zmiana todosa - logika poziom wyżej
     onDone (ev) {
       ev.preventDefault();
       this.props.onChange(this.state.newName, this.state.isDone);
@@ -127,7 +133,8 @@
         newName: ev.target.value
       });
     }
-    
+
+    //6/ Renderowanie w zależności od stanu
     render () {
       if (this.props.isInEditMode) {
         return this.renderTodoEdit();
@@ -172,9 +179,21 @@ render(<List />, document.querySelector('app'));
 <script id="index.html" type="application/octetstream" src="015/index.html"></script>
 </xp-editor>
       </div>
+      <div class="xp-resize-column"></div>
       <div class="xp-column">
         <xp-preview runner="html-jsx"></xp-preview>
       </div>
     </div>
-
+    <div class="xp-resize-row"></div>
+    <div class="xp-row comments">
+      <xp-annotations>
+        <header>
+          <h1>Implementacja w React</h1>
+        </header>
+        <details>
+          <p>Zobaczmy jak to wygląda w React.</p>
+          <p>Kontrola nad stanem jest zrzucona dużo bardziej na nas niż w przypadku Angulara (ng-model vs lokalny stan)</p>
+        </details>
+      </xp-annotations>
+    </div>
 </body></html>
