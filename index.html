@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Party List</title>
-  <!--2/ Ładujemy SystemJS i jego konfiguracje -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.23/system.js" defer></script>
   <script src="system.config.js" defer></script>
-  <!--5/ Używamy SystemJS do ładowania głównego pliku -->
   <script>
     window.addEventListener('load', function () {
       System.import('app/main.js');
