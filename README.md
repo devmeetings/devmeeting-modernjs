@@ -1,2 +1,0 @@
-# devmeeting-modernjs
-ModernJS
