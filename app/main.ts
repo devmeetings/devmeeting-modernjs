@@ -1,6 +1,6 @@
-/// Importuj zależności
+//2/ Importuj zależności
+import {React} from "./react.class";
 import {App} from "./app.class";
 
-const app = document.getElementById("app");
-/// Renderuj aplikację
-app.innerHTML = new App().render();
+/// Renderujemy aplikację
+React.render(new App(), document.getElementById("app"));
