@@ -1,8 +1,6 @@
 import {Coordinates} from "./coordinates.interface";
 
-//25/ Definicja klasy
 export class Party {
-  /// Deklaracje domyślnie publicznej właściwości obiektu o typie Coordinates
   place: Coordinates;
 
   constructor(

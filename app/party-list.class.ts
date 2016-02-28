@@ -1,7 +1,6 @@
 import {Component} from "./component.interface";
 import {Party} from "./party.class";
 
-/// Klasa implementująca interface
 export class PartyList implements Component {
   parties: Party[] = [];
 
@@ -9,7 +8,6 @@ export class PartyList implements Component {
     this.parties = [...this.parties, party];
   }
 
-  //7/ Metoda wymagana przez interface
   render(): string {
     return `
       <ul>
