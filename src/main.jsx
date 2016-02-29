@@ -2,33 +2,29 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-// Importujemy metodę connect z react-redux
 import {connect} from 'react-redux';
 
-// Importujemy store
 import store from './store.js';
 
 class App extends React.Component {
-
   render () {
-    //7/ Ten komponent nie ma już żadnego stanu - wszystko wpada w props
     return (
       <div>
         <h1>Val: {this.props.val}</h1>
         <button onClick={() => this.props.actions.increment()}>+</button>
         <button onClick={() => this.props.actions.decrement()}>-</button>
+        <div>{JSON.stringify(this.props.tasks, null, 2)}</div>
       </div>
     );
   }
 }
 
-//19/ Funkcja `connect` tworzy nowy komponent, który wie jak wykorzystać `store`
 const App2 = connect(
-  //3/ Tutaj mówimy jak zamienić stan na propsy
+  //4/ Tym razem ze stanu mapujemy dwie własności
   state => ({
-    val: state
+    val: state.count,
+    tasks: state.tasks
   }),
-  //14/ a tutaj definiujemy jakie akcje można wywołać 
   dispatch => ({
     actions: {
       increment () {
@@ -45,5 +41,4 @@ const App2 = connect(
   })
 )(App);
 
-// Przekazujemy store do komponentu (powinniśmy użyć `Provider`)
 render(<App2 store={store} />, document.querySelector('#app'));
