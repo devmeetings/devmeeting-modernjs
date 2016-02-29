@@ -3,6 +3,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {connect} from 'react-redux';
+import * as Actions from './actions.js';
 
 import store from './store.js';
 
@@ -19,25 +20,28 @@ class App extends React.Component {
   }
 }
 
+//12/ Dzięki tej funkcji nie musimy ręcznie tworzyć akcji
+function bindActions(actions, dispatch) {
+  return Object.keys(actions).reduce((allActions, action) => {
+    //5/ Używamy formatu FSA (Flux Standard Action)
+    allActions[action] = (payload) => dispatch({
+      type: actions[action],
+      payload,
+      error: payload instanceof Error
+    });
+    return allActions;
+  }, {});
+}
+
+// Connect można też używać jako adnotacji
 const App2 = connect(
-  //4/ Tym razem ze stanu mapujemy dwie własności
   state => ({
     val: state.count,
     tasks: state.tasks
   }),
+  //3/ Przypinamy wszystkie akcje
   dispatch => ({
-    actions: {
-      increment () {
-        dispatch({
-          type: 'INC'
-        })
-      },
-      decrement () {
-        dispatch({
-          type: 'DEC'
-        })
-      }
-    }
+    actions: bindActions(Actions, dispatch)
   })
 )(App);
 

@@ -1,13 +1,32 @@
-// combineReducers pozwala podzielić stan na części
 import {createStore, combineReducers, applyMiddleware} from 'redux';
+// Importujemy akcje
+import * as Actions from './actions.js';
 
-//4/ Dzielimy stan na niezależne części i ich obsługą zajmują się dwie funkcje
+//5/ Reducery zapisujemy w ten sposób
+const tasks = createReducer([], {
+  [Actions.increment](state, action) {
+    return [...state, `New task no ${state.length + 1}`];
+  }
+});
+
+//8/ ... każda obsługiwana akcja to osobna funkcja
+const count = createReducer(3, {
+
+  [Actions.increment](state) {
+    return state + 1;
+  },
+
+  [Actions.decrement](state) {
+    return state - 1;
+  }
+
+})
+
 const reducer = combineReducers({
   tasks: tasks,
   count
 });
 
-//6/ Dodajemy middleware - miejsce przez które przechodzi każda akcja
 export default applyMiddleware(
   (store) => (next) => (action) => {
     console.log(store.getState(), action);
@@ -15,23 +34,12 @@ export default applyMiddleware(
   }
 )(createStore)(reducer);
 
-//8/ Za każdym razem, kiedy inkrementujemy zmienną dodajemy też jednego taska
-function tasks(state = [], action) {
-  switch (action.type) {
-    case 'INC':
-      return [...state, `New task no ${state.length + 1}`];
-    default:
-      return state;
-  }
-}
-
-function count(state = 3, action) {
-  switch (action.type) {
-    case 'INC':
-      return state + 1;
-    case 'DEC':
-      return state - 1;
-    default:
-      return state;
-  }
+//8/ Ta pomocnicza funkcja pozwola nam tworzyć reducery.
+function createReducer(initialState, clazz) {
+  return function reducer(state = initialState, action) {
+    if (clazz[action.type]) {
+      return clazz[action.type](state, action);
+    }
+    return state;
+  };
 }
