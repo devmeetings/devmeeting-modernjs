@@ -1,17 +1,32 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-// Importujemy akcje
 import * as Actions from './actions.js';
 
-//5/ Reducery zapisujemy w ten sposób
-const tasks = createReducer([], {
+const tasks = createReducer({
+  todos: [],
+  fetching: false
+}, {
   [Actions.increment](state, action) {
-    return [...state, `New task no ${state.length + 1}`];
+    //3/ W ES7 będzie to wyglądać lepiej dzięki `{...state}`
+    return Object.assign({}, state, {
+      todos: [...state.todos, `New task no ${state.todos.length + 1}`]
+    });
+  },
+  //5/ Definiujemy nową akcję do obsługi rozpoczęcia pobierania
+  [Actions.fetchTodosStarted](state) {
+    return Object.assign({}, state, {
+      fetching: true
+    });
+  },
+  //5/ oraz skończonego pobierania
+  [Actions.fetchTodosSuccess](state, action) {
+    return Object.assign({}, state, {
+      fetching: false,
+      todos: [...state.todos, ...action.payload]
+    });
   }
 });
 
-//8/ ... każda obsługiwana akcja to osobna funkcja
 const count = createReducer(3, {
-
   [Actions.increment](state) {
     return state + 1;
   },
@@ -19,7 +34,6 @@ const count = createReducer(3, {
   [Actions.decrement](state) {
     return state - 1;
   }
-
 })
 
 const reducer = combineReducers({
@@ -28,6 +42,12 @@ const reducer = combineReducers({
 });
 
 export default applyMiddleware(
+  // Redux-thunk: https://github.com/gaearon/redux-thunk
+  ({dispatch, getState}) => {
+    return (next) => (action) => {
+      return typeof action === 'function' ? action(dispatch, getState) : next(action);
+    };
+  },
   (store) => (next) => (action) => {
     console.log(store.getState(), action);
     next(action);
