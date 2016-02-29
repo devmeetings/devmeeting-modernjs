@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="http://xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>tsconfig i systemjs</title>
+        <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="app/main.ts" tree>
+        	<script id="app/main.ts" highlight="1" type="application/octetstream" src="002/app/main.ts"></script>
+	<script id="index.html" highlight="1-19" type="application/octetstream" src="002/index.html"></script>
+	<script id="package.json" highlight="1-12" type="application/octetstream" src="002/package.json"></script>
+	<script id="system.config.js" highlight="1-5" type="application/octetstream" src="002/system.config.js"></script>
+	<script id="tsconfig.json" highlight="1-10" type="application/octetstream" src="002/tsconfig.json"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview runner="html-ts"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Początkowa konfiguracja</h1></header>
+            <details>
+  <p>Na początek potrzebujemy prostej struktury projektu.</p>
+  <p>Kluczowym plikiem jest <code>tsconfig.json</code>, w którym znajduje się konfiguracja dla TypeScript Compiler (<code>tsc</code>).</p>
+  <p>Pliki będziemy ładować korzystająć z SystemJS.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
