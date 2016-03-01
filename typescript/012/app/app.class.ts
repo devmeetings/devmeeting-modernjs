@@ -11,11 +11,10 @@ export class App implements Component {
     this.partyList = new PartyList();
     this.partyList.add(new Party("Awesome party", new Date(), "52", "18"));
     this.partyList.add(new Party("Poor party", new Date(), "53", "21"));
-    
-    /// Przekazujemy instancję PartyList do konstruktora
+
     this.partyForm = new PartyForm(this.partyList);
   }
-  
+
   render() {
     return `
       <div>

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "sourceMap": true
+  },
+  "filesGlob": [
+      "./**/*.ts",
+      "!./node_modules/**/*.ts"
+  ],
+  "files": [
+      "./app/main.ts",
+      "./typings/es6-promise/es6-promise.d.ts"
+  ]
+}
