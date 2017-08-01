@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/devmeetings/devmeeting-modernjs/issues"
   },
-  "homepage": "http://xpla.org/slides/modernjs",
+  "homepage": "https://xpla.org/slides/modernjs",
   //7/ JSPM wpina swoją konfigurację w plik `package.json`
   "jspm": {
     /// Podajemy ścieżkę do pliku z configiem, bo JSPM sam tym plikiem zarządza

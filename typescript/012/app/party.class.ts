@@ -13,7 +13,7 @@ export class Party {
   }
 
   getMapURL() {
-    return `http://maps.google.com/maps?z=15&q=${this.place.lng},${this.place.lat}`;
+    return `https://maps.google.com/maps?z=15&q=${this.place.lng},${this.place.lat}`;
   }
 
   getNiceDate() {

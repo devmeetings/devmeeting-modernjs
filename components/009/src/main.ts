@@ -45,10 +45,10 @@ class App implements OnInit, OnDestroy {
   model: TasksModel;
   now: number;
 
-  private http: Http;
+  private https: Http;
   private interval: number;
 
-  constructor(http: Http) {
+  constructor(https: Http) {
     // Przypisujemy zależności do `http`
     this.http = http;
     //2/ Stan komponentu też przypisujemy bezpośrednio do `this`
